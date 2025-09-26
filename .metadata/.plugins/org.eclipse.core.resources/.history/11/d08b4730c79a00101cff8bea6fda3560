@@ -1,0 +1,5 @@
+package com.practical.hibernate.entity;
+
+public class Student {
+
+}

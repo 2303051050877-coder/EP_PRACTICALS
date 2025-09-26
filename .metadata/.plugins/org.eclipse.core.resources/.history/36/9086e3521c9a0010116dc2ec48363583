@@ -1,0 +1,23 @@
+package com.servlets;
+
+import java.io.*;
+import jakarta.servlet.*;
+import jakarta.servlet.http.*;
+import jakarta.servlet.annotation.*;
+
+@WebServlet("/displayCookie")
+public class DisplayCookieServlet extends HttpServlet {
+    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws IOException {
+        resp.setContentType("text/html");
+        PrintWriter out = resp.getWriter();
+
+        Cookie[] cookies = req.getCookies();
+        if (cookies != null) {
+            for (Cookie c : cookies) {
+                out.println(c.getName() + " : " + c.getValue() + "<br>");
+            }
+        } else {
+            out.println("⚠ No cookies found!");
+        }
+    }
+}

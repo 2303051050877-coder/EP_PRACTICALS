@@ -1,0 +1,60 @@
+package com.jdbc;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+
+public class PreparedStatementExample {
+    public static void main(String[] args) {
+        String url = "jdbc:mysql://localhost:3306/practicals_db";
+        String user = "root";   // change if needed
+        String password = "yourpassword"; // change to your MySQL password
+
+        try {
+            // 1. Load Driver
+            Class.forName("com.mysql.cj.jdbc.Driver");
+
+            // 2. Establish Connection
+            Connection con = DriverManager.getConnection(url, user, password);
+            System.out.println("✅ Connected with database!");
+
+            // 3. Insert using PreparedStatement
+            String insertSQL = "INSERT INTO students (name, age) VALUES (?, ?)";
+            PreparedStatement ps = con.prepareStatement(insertSQL);
+
+            ps.setString(1, "Alice");
+            ps.setInt(2, 20);
+            ps.executeUpdate();
+
+            ps.setString(1, "Bob");
+            ps.setInt(2, 25);
+            ps.executeUpdate();
+
+            System.out.println("✅ Records inserted successfully!");
+
+            // 4. Retrieve using ResultSet
+            String selectSQL = "SELECT * FROM students";
+            PreparedStatement psSelect = con.prepareStatement(selectSQL);
+            ResultSet rs = psSelect.executeQuery();
+
+            System.out.println("\nStudent Records:");
+            while (rs.next()) {
+                int id = rs.getInt("id");
+                String name = rs.getString("name");
+                int age = rs.getInt("age");
+
+                System.out.println(id + " | " + name + " | " + age);
+            }
+
+            // 5. Cleanup
+            rs.close();
+            ps.close();
+            psSelect.close();
+            con.close();
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+}

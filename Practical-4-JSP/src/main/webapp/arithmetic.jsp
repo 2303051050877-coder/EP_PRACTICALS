@@ -1,0 +1,22 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Arithmetic JSP</title>
+</head>
+<body>
+<%
+    int a = 10, b = 5;
+    int sum = a + b;
+    int diff = a - b;
+    int product = a * b;
+    int quotient = a / b;
+%>
+<h2>Arithmetic Operations(Written By Shivansh Mishra)</h2>
+<p>a = <%= a %>, b = <%= b %></p>
+<p>Sum = <%= sum %></p>
+<p>Difference = <%= diff %></p>
+<p>Product = <%= product %></p>
+<p>Quotient = <%= quotient %></p>
+</body>
+</html>

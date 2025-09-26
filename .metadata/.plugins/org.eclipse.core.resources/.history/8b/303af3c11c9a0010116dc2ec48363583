@@ -1,0 +1,23 @@
+package com.servlets;
+
+import java.io.*;
+import jakarta.servlet.*;
+import jakarta.servlet.http.*;
+import jakarta.servlet.annotation.*;
+
+@WebServlet("/login")
+public class LoginServlet extends HttpServlet {
+    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws IOException {
+        String user = req.getParameter("username");
+        String pass = req.getParameter("password");
+
+        resp.setContentType("text/html");
+        PrintWriter out = resp.getWriter();
+
+        if ("admin".equals(user) && "1234".equals(pass)) {
+            out.println("<h2>✅ Login Successful</h2>");
+        } else {
+            out.println("<h2>❌ Invalid Username or Password</h2>");
+        }
+    }
+}

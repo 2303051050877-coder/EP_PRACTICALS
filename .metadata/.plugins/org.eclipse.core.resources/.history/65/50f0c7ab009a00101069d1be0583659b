@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?><project-modules id="moduleCoreId" project-version="1.5.0">
+    <wb-module deploy-name="Practical 2 - JDBC Prepared Statement">
+        <property name="context-root" value="Practical_2_-_JDBC_Prepared_Statement"/>
+    </wb-module>
+</project-modules>

@@ -1,0 +1,31 @@
+package com.practical.hibernate;
+
+import com.practical.hibernate.dao.StudentDAO;
+import com.practical.hibernate.entity.Student;
+
+import java.util.List;
+
+public class MainApp {
+    public static void main(String[] args) {
+        StudentDAO dao = new StudentDAO();
+
+        // Create
+        Student s1 = new Student("John Doe", "john@example.com");
+        dao.saveStudent(s1);
+
+        // Read
+        Student s2 = dao.getStudent(1);
+        System.out.println("Fetched: " + s2);
+
+        // Update
+        s2.setEmail("john.doe@gmail.com");
+        dao.updateStudent(s2);
+
+        // Read All
+        List<Student> students = dao.getAllStudents();
+        students.forEach(System.out::println);
+
+        // Delete
+        dao.deleteStudent(1);
+    }
+}

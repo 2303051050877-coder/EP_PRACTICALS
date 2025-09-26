@@ -1,0 +1,26 @@
+package com.servlets;
+
+import java.io.*;
+
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.Cookie;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+@WebServlet("/createCookie")
+public class CreateCookieServlet extends HttpServlet {
+    /**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
+	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws IOException {
+        Cookie cookie = new Cookie("username", "Shivansh Mishra");
+        cookie.setMaxAge(60 * 60); // 1 hour
+        resp.addCookie(cookie);
+
+        resp.setContentType("text/html");
+        resp.getWriter().println("✅ Cookie created successfully!");
+    }
+}

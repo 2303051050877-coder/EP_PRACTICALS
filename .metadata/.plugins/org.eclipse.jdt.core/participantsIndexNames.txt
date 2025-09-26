@@ -1,0 +1,9 @@
+INDEX VERSION 1.134
+C:\Users\Shivansh Mishra\eclipse-practical-workspace\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\273758148.index
+\Practical-4-JSP\src\main\java
+C:\Users\Shivansh Mishra\eclipse-practical-workspace\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\1134152752.index
+\Practical-5-Hibernate\src\main\resources
+C:\Users\Shivansh Mishra\eclipse-practical-workspace\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\2686821189.index
+\Practical-4-JSP\src\main\java
+C:\Users\Shivansh Mishra\eclipse-practical-workspace\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\3881278622.index
+\Practical-6-Spring-CRUD\src\main\java

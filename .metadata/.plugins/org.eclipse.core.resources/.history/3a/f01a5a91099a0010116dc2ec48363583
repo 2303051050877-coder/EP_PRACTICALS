@@ -1,0 +1,25 @@
+package com.servlets;
+
+import java.io.*;
+
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+public class RequestDetailsServlet extends HttpServlet {
+    /**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
+	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws IOException {
+        resp.setContentType("text/html");
+        PrintWriter out = resp.getWriter();
+
+        out.println("<h2>Request Details</h2>");
+        out.println("Method: " + req.getMethod() + "<br>");
+        out.println("URI: " + req.getRequestURI() + "<br>");
+        out.println("Protocol: " + req.getProtocol() + "<br>");
+        out.println("Remote Addr: " + req.getRemoteAddr() + "<br>");
+    }
+}
